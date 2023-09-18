@@ -1,0 +1,25 @@
+<div id="app">
+  <h1>{{ titulo }}</h1>
+  <hr />
+  <p>{{ mensagem }}</p>
+  <p>Expressão Javascript: {{ 2 * 5}}</p>
+  <p>Expressão 2 Javascript: {{ valor1 + valor2 }}</p>
+  <p>Tamanho da mensagem: {{ mensagem.length }}</p>
+  <p>Mensagem em maiusculo: {{ mensagem.toUpperCase() }}</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<script>
+  var vm = new Vue({
+    el: "#app",
+    data() {
+      return {
+        titulo: "Meu título",
+        mensagem: "Minha mensagem no Vue",
+        valor1: 10,
+        valor2: 20,
+      };
+    },
+  });
+</script>
