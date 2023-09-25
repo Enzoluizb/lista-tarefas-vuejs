@@ -1,0 +1,38 @@
+<meta charset="utf-8" />
+
+<div id="app">
+  <h1>{{ titulo }}</h1>
+  <hr />
+  <p>{{ mensagem }}</p>
+  <hr>
+  <p> {{ boasVindas() }}</p>
+  <hr>
+  <p>O valor {{ valor }} é {{ verificarParOuImpar() }}.</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<script>
+  var vm = new Vue({
+    el: "#app",
+    data() {
+      return {
+        titulo: "Métodos",
+        mensagem: "Minha mensagem no Vue",
+        valor: 15
+      };
+    },
+    methods: {
+      boasVindas() {
+        return "Seja bem-vindo!"
+      },
+      verificarParOuImpar(valor) {
+        if (this.valor % 2 === 0) {
+          return "par"
+        } else {
+          return "ímpar"
+        }
+      }
+    }
+  });
+</script>
