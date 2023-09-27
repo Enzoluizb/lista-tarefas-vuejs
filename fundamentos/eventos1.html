@@ -1,0 +1,36 @@
+<meta charset="utf-8" />
+
+<div id="app">
+  <h1>{{ titulo }}</h1>
+  <hr />
+  <p>{{ mensagem }}</p>
+  <button v-on:click="inverterMensagem">Inverter Msg</button>
+  <hr>
+  <p>Usando computed - propriedades computadas</p>
+  <p>Mensagem Invertida: {{ mensagemInvertida }}</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<script>
+  var vm = new Vue({
+    el: "#app",
+    data() {
+      return {
+        titulo: "Métodos",
+        mensagem: "Minha mensagem no Vue",
+        valor: 15
+      };
+    },
+    methods: {
+      inverterMensagem() {
+        this.mensagem = this.mensagem.split('').reverse().join('')
+      }
+    },
+    computed: {
+      mensagemInvertida() {
+        return this.mensagem.split('').reverse().join('')
+      }
+    }
+  });
+</script>
