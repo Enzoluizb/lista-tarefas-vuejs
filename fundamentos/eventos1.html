@@ -5,9 +5,19 @@
   <hr />
   <p>{{ mensagem }}</p>
   <button v-on:click="inverterMensagem">Inverter Msg</button>
-  <hr>
+  <hr />
   <p>Usando computed - propriedades computadas</p>
   <p>Mensagem Invertida: {{ mensagemInvertida }}</p>
+  <hr />
+  Valor atual {{ valor }}
+  <button @click="adicionar">Adicionar</button>
+  <button @click.exact="adicionar">Adicionar exact</button>
+  <button @click.ctrl="diminuir">Diminuir</button>
+  <button @click.ctrl.exact="diminuir">Diminuir exact</button>
+
+  <hr>
+  <input type="text" @keyup="alterarMensagem">
+  <input type="text" @keyup.enter="alterarMensagem">
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
@@ -19,18 +29,27 @@
       return {
         titulo: "Métodos",
         mensagem: "Minha mensagem no Vue",
-        valor: 15
-      };
+        valor: 15,
+      }
     },
     methods: {
       inverterMensagem() {
-        this.mensagem = this.mensagem.split('').reverse().join('')
+        this.mensagem = this.mensagem.split("").reverse().join("");
+      },
+      adicionar() {
+        this.valor++;
+      },
+      diminuir() {
+        this.valor--;
+      },
+      alterarMensagem(e) {
+        this.mensagem = e.target.value
       }
     },
     computed: {
       mensagemInvertida() {
-        return this.mensagem.split('').reverse().join('')
-      }
+        return this.mensagem.split("").reverse().join("");
+      },
     }
   });
 </script>
