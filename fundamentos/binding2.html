@@ -1,0 +1,33 @@
+<meta charset="utf-8" />
+
+<div id="app">
+  <h1>{{ titulo }}</h1>
+  <hr />
+  {{ mensagem }}
+  <hr />
+  <input v-model="mensagem" type="text">
+  <hr>
+  <a :href="url" target="_blank">Link</a> para o site do Vue
+  <hr>
+  <button :disabled="disabled">Novo botão</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<script>
+  var vm = new Vue({
+    el: "#app",
+    data() {
+      return {
+        titulo: "Binding",
+        mensagem: "Minha mensagem no Vue",
+        valor: 15,
+        url: "https://br.vuejs.org",
+        disabled: true
+      };
+    },
+    methods: {
+      
+    },
+  });
+</script>
