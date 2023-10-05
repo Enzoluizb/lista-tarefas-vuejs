@@ -1,0 +1,30 @@
+<meta charset="utf-8" />
+
+<div id="app">
+  <h1>{{ titulo }}</h1>
+  <hr />
+  <p>Listagem de Frutas (em objetos)</p>
+  <ul>
+    <li v-for="fruta in frutas" :key="fruta.nome"><strong>{{ fruta.nome }}</strong> - Principal Vitamina: {{ fruta.vitamina }}</li>
+  </ul>
+  <hr />
+  <p>Listagem de Frutas (em objetos e indice)</p>
+  <ul>
+    <li v-for="(fruta, indice) in frutas" :key="indice"><strong>{{ indice+1 }} - {{ fruta.nome }}</strong> - Principal Vitamina: {{ fruta.vitamina }}</li>
+  </ul>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<script>
+  var vm = new Vue({
+    el: "#app",
+    data() {
+      return {
+        titulo: "Listas",
+        frutas: [{ nome: "Laranja", vitamina: "A" }, { nome: "Maça", vitamina: "B" }, { nome: "Melao", vitamina: "C" }],
+      };
+    },
+    methods: {},
+  });
+</script>

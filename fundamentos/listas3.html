@@ -1,0 +1,25 @@
+<meta charset="utf-8" />
+
+<div id="app">
+  <h1>{{ titulo }}</h1>
+  <hr />
+  <p>Listagem de Livros (em objetos)</p>
+    
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<script>
+  var vm = new Vue({
+    el: "#app",
+    data() {
+      return {
+        titulo: "Listas 3",
+        Livros: [
+
+        ],
+      };
+    },
+    methods: {},
+  });
+</script>

@@ -1,0 +1,27 @@
+<meta charset="utf-8" />
+
+<div id="app">
+  <h1>{{ titulo }}</h1>
+  <hr />
+  <p>Listagem de Frutas com índice</p>
+  <ul>
+    <li v-for="(fruta, index) in frutas" :key="fruta">
+      {{ index+1 }} - {{ fruta }}
+    </li>
+  </ul>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<script>
+  var vm = new Vue({
+    el: "#app",
+    data() {
+      return {
+        titulo: "Listas",
+        frutas: ["Laranja", "Maça", "Melao"],
+      };
+    },
+    methods: {},
+  });
+</script>
