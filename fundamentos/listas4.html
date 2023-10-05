@@ -1,0 +1,45 @@
+<meta charset="utf-8" />
+
+<div id="app">
+  <h1>{{ titulo }}</h1>
+  <hr />
+
+  <p>Listagem de Livros (em objetos)</p>
+  <div v-for="(livro, index) in livros" :key="index">
+    <ul>
+      <li v-for="(valor, chave, indice) in livro">({{ indice+1 }}){{ chave }} - {{ valor }}</li>
+    </ul>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+  <script>
+    var vm = new Vue({
+      el: "#app",
+      data() {
+        return {
+          titulo: "Listas 3",
+          livros: [
+            {
+              titulo: "O pequeno príncipe",
+              autor: "Antoine de Saint-Exupéry",
+              publicadoEm: "1943",
+            },
+            {
+              titulo: "O Senhor dos Anéis",
+              autor: "J.R.R. Tolkien",
+              publicadoEm: "1954",
+            },
+            {
+              titulo: "O Conde do Monte Cristo",
+              autor: "Alexandre Dumas",
+              publicadoEm: "1944",
+            },
+          ],
+        };
+      },
+      methods: {},
+    });
+  </script>
+</div>
