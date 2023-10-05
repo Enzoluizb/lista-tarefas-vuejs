@@ -4,7 +4,7 @@
   <h1>{{ titulo }}</h1>
   <hr />
   <p>Listagem de Livros (em objetos)</p>
-    
+  <div v-for="(livro, index) in livros" :key="index">{{ livro }}</div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
@@ -15,8 +15,22 @@
     data() {
       return {
         titulo: "Listas 3",
-        Livros: [
-
+        livros: [
+          {
+            titulo: "O pequeno príncipe",
+            autor: "Antoine de Saint-Exupéry",
+            publicadoEm: "1943",
+          },
+          {
+            titulo: "O Senhor dos Anéis",
+            autor: "J.R.R. Tolkien",
+            publicadoEm: "1954",
+          },
+          {
+            titulo: "O Conde do Monte Cristo",
+            autor: "Alexandre Dumas",
+            publicadoEm: "1944",
+          },
         ],
       };
     },
