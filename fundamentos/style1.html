@@ -1,0 +1,48 @@
+<meta charset="utf-8" />
+
+<div id="app">
+  <h1>{{ titulo }}</h1>
+  <hr />
+  <div class="quadro" :style="{color: minhaCor, fontSize: tamanho}">
+    Exemplo de style inline
+  </div>
+  <hr />
+  <div class="quadro" :style="estiloInline">
+    Exemplo de style inline 2
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<script>
+  var vm = new Vue({
+    el: "#app",
+    data() {
+      return {
+        titulo: "Interligação de Style inline 1",
+        minhaCor: "red",
+        tamanho: "40px",
+      };
+    },
+    computed: {
+      estiloInline() {
+        return {
+          color: 'blue',
+          fontSize: '30px'
+        }
+      }
+    }
+  });
+</script>
+
+<style>
+  .quadro {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    padding: 40px;
+    margin: 10px;
+    background-color: darkgrey;
+    font-family: sans-serif;
+  }
+</style>

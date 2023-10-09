@@ -1,0 +1,58 @@
+<meta charset="utf-8" />
+
+<div id="app">
+  <h1>{{ titulo }}</h1>
+  <hr />
+  <div class="quadro" :class="classeQuadro">
+    <!--   <div class="quadro" :class="{negrito: importante}">Exemplo de classes CSS</div>-->
+    <!--   <div class="quadro" :class="{negrito: importante, urgente: urgente}">Exemplo de classes CSS</div>-->
+    Exemplo de classes CSS
+  </div>
+  <div class="quadro" :class="classeQuadroComputado">
+    Exemplo de classes CSS 2
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<script>
+  var vm = new Vue({
+    el: "#app",
+    data() {
+      return {
+        titulo: "Interligação de Classes 2",
+        importante: false, // true or false
+        classeQuadro: {
+          negrito: true,
+          urgente: false,
+        },
+      };
+    },
+    computed: {
+      classeQuadroComputado() {
+        return {
+          negrito: this.importante,
+          urgente: true
+        }
+      }
+    }
+  });
+</script>
+
+<style>
+  .negrito {
+    font-weight: bold;
+  }
+  .urgente {
+    color: red;
+  }
+  .quadro {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    padding: 40px;
+    margin: 10px;
+    background-color: darkgrey;
+    font-family: sans-serif;
+  }
+</style>
