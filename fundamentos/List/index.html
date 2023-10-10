@@ -16,9 +16,11 @@
     <div id="app" class="container">
       <h2>{{ titulo }}</h2>
       <div class="input-group">
-        <input type="text" class="form-control" />
+        <input @keyup.enter="adicionarTarefa" type="text" class="form-control" v-model="novaTarefa" />
         <span class="input-group-btn">
-          <button class="btn btn-primary">Adicionar</button>
+          <button @click="adicionarTarefa" class="btn btn-primary">
+            Adicionar
+          </button>
         </span>
       </div>
 
@@ -32,6 +34,9 @@
           <label>{{ tarefa.titulo }}</label>
         </li>
       </ul>
+
+      <p><em>Total de Tarefas:</em> <span>{{ totalTarefas }}</span></p>
+      <p><em>Tarefas concluídas:</em> <span>{{ totalTarefasConcluidas }}</span></p>
 
       <footer>
         <hr />
