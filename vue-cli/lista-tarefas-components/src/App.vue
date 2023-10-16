@@ -30,14 +30,16 @@
         <input type="text" v-model="titulo" />
       </footer>
     </div>
+    <RodapePrincipal />
   </section>
 </template>
 
 <script>
 import CabecalhoPrincipal from "@/components/CabecalhoPrincipal.vue";
+import RodapePrincipal from "@/components/RodapePrincipal.vue";
 export default {
   name: "App",
-  components: { CabecalhoPrincipal },
+  components: { CabecalhoPrincipal, RodapePrincipal },
   data() {
     return {
       titulo: "Lista de Tarefas",
