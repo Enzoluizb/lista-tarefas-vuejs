@@ -1,33 +1,12 @@
 <template>
   <section>
-    <CabecalhoPrincipal />
+    <CabecalhoPrincipal :valor="titulo" />
     <div class="container">
-      <h2>{{ titulo }}</h2>
-      <div class="input-group">
-        <input
-          @keyup.enter="adicionarTarefa"
-          type="text"
-          v-model="novaTarefa"
-        />
-        <span class="input-group-btn">
-          <button @click="adicionarTarefa" class="btn btn-primary">
-            Adicionar
-          </button>
-        </span>
-      </div>
-      <ul>
-        <li
-          v-for="(tarefa, index) in tarefas"
-          :key="index"
-          :class="{ removed: tarefa.checked }"
-        >
-          <input type="checkbox" v-model="tarefa.checked" />
-          <label>{{ tarefa.titulo }}</label>
-        </li>
-      </ul>
+      <adicionar-tarefa @adicionarTarefa="adicionarTarefa" />
+      <listar-tarefas :tarefas="tarefas" />
       <footer>
         <em>Altere aqui o título da sua lista de tarefas</em>
-        <input type="text" v-model="titulo" />
+        <entrada-dados v-model="titulo" type="text" />
       </footer>
     </div>
     <RodapePrincipal />
@@ -35,28 +14,35 @@
 </template>
 
 <script>
-import CabecalhoPrincipal from "@/components/CabecalhoPrincipal.vue";
-import RodapePrincipal from "@/components/RodapePrincipal.vue";
+import CabecalhoPrincipal from "@/components/CabecalhoPrincipal";
+import RodapePrincipal from "@/components/RodapePrincipal";
+import ListarTarefas from "@/components/ListarTarefas";
+import AdicionarTarefa from "@/components/AdicionarTarefa";
+import EntradaDados from "@/components/templates/EntradaDados";
 export default {
   name: "App",
-  components: { CabecalhoPrincipal, RodapePrincipal },
+  components: {
+    CabecalhoPrincipal,
+    RodapePrincipal,
+    ListarTarefas,
+    AdicionarTarefa,
+    EntradaDados,
+  },
   data() {
     return {
-      titulo: "Lista de Tarefas",
-      novaTarefa: "",
+      titulo: "Minha lista de tarefas",
       tarefas: [
         { titulo: "Estudar", checked: false },
-        { titulo: "Ler", checked: true },
+        { titulo: "Programar", checked: true },
       ],
     };
   },
   methods: {
-    adicionarTarefa() {
+    adicionarTarefa(novaTarefa) {
       this.tarefas.push({
-        titulo: this.novaTarefa,
+        titulo: novaTarefa,
         checked: false,
       });
-      this.novaTarefa = "";
     },
   },
 };
@@ -64,7 +50,7 @@ export default {
 
 <style>
 .container {
-  width: 40%;
+  width: 60%;
   margin: 20px auto 0px auto;
 }
 

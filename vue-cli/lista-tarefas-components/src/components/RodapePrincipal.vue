@@ -1,18 +1,14 @@
 <template>
-  <footer>
-    <h1>Rodapé</h1>
-  </footer>
+  <footer>Meu rodapé</footer>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style scoped>
 footer {
-  background-color: lightcyan;
+  background-color: royalblue;
   height: 50px;
   width: 100%;
   position: fixed;

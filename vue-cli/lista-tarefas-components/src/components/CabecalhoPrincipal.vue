@@ -1,21 +1,23 @@
 <template>
   <header>
-    <h1>Título</h1>
+    <h1>{{ valor }}</h1>
   </header>
 </template>
 
 <script>
 export default {
-
-}
+  props: ["valor"],
+};
 </script>
 
-<style scoped>
-footer {
-  background-color: lightcyan;
+<style>
+header {
+  background-color: royalblue;
+  color: white;
   height: 50px;
   width: 100%;
-  position: fixed;
-  bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>
