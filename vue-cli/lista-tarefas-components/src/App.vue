@@ -1,32 +1,43 @@
 <template>
-  <div class="container">
-    <h2>{{ titulo }}</h2>
-    <div class="input-group">
-      <input @keyup.enter="adicionarTarefa" type="text" v-model="novaTarefa" />
-      <span class="input-group-btn">
-        <button @click="adicionarTarefa" class="btn btn-primary">Adicionar</button>
-      </span>
+  <section>
+    <CabecalhoPrincipal />
+    <div class="container">
+      <h2>{{ titulo }}</h2>
+      <div class="input-group">
+        <input
+          @keyup.enter="adicionarTarefa"
+          type="text"
+          v-model="novaTarefa"
+        />
+        <span class="input-group-btn">
+          <button @click="adicionarTarefa" class="btn btn-primary">
+            Adicionar
+          </button>
+        </span>
+      </div>
+      <ul>
+        <li
+          v-for="(tarefa, index) in tarefas"
+          :key="index"
+          :class="{ removed: tarefa.checked }"
+        >
+          <input type="checkbox" v-model="tarefa.checked" />
+          <label>{{ tarefa.titulo }}</label>
+        </li>
+      </ul>
+      <footer>
+        <em>Altere aqui o título da sua lista de tarefas</em>
+        <input type="text" v-model="titulo" />
+      </footer>
     </div>
-    <ul>
-      <li
-        v-for="(tarefa, index) in tarefas"
-        :key="index"
-        :class="{ removed: tarefa.checked }"
-      >
-        <input type="checkbox" v-model="tarefa.checked" />
-        <label>{{ tarefa.titulo }}</label>
-      </li>
-    </ul>
-    <footer>
-      <em>Altere aqui o título da sua lista de tarefas</em>
-      <input type="text" v-model="titulo" />
-    </footer>
-  </div>
+  </section>
 </template>
 
 <script>
+import CabecalhoPrincipal from "@/components/CabecalhoPrincipal.vue";
 export default {
   name: "App",
+  components: { CabecalhoPrincipal },
   data() {
     return {
       titulo: "Lista de Tarefas",
@@ -41,11 +52,11 @@ export default {
     adicionarTarefa() {
       this.tarefas.push({
         titulo: this.novaTarefa,
-        checked: false
-      })
-      this.novaTarefa = '';
-    }
-  }
+        checked: false,
+      });
+      this.novaTarefa = "";
+    },
+  },
 };
 </script>
 
