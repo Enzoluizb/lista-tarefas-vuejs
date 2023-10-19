@@ -1,12 +1,28 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+    <CompCabecalho />
+    <div id="nav">
+      <nav id="nav">
+        <router-link to="/">Home</router-link>
+        <router-link to="/about">About</router-link>
+        <router-link to="/usuario">User</router-link>
+      </nav>
+    </div>
+    <div class="content">
+      <router-view />
+    </div>
+    <CompRodape />
   </div>
 </template>
+
+<script>
+import CompCabecalho from './components/templates/CompCabecalho.vue';
+import CompRodape from './components/templates/CompRodape.vue';
+
+export default {
+  components: { CompCabecalho, CompRodape}
+}
+</script>
 
 <style>
 #app {

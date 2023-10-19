@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+}
+
+#app {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 15% 1fr;
+    grid-template-rows: 10% auto 10%;
+    grid-template-areas: 
+    'header header'
+    'nav content'
+    'footer footer';
+}
+
+.header {
+    grid-area: header;
+    background-color: royalblue;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: royalblue;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+}
+
+.content {
+    grid-area: content;
+}
+
+#nav {
+    grid-area: nav;
+    border-right: slategrey 2px solid;
+    display: flex;
+    flex-direction: column;
+}
