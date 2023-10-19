@@ -1,12 +1,15 @@
 <template>
-    <div class="home">
-      <h1>User Page</h1>
+  <section>
+    <div>
+      <h1>User View</h1>
+      <CompCirculo />
     </div>
-  </template>
-  
-  <script>
-  export default {
-    name: 'UserView',
-  }
-  </script>
-  
+  </section>
+</template>
+
+<script>
+import CompCirculo from '../components/CompCirculo.vue';
+export default {
+  components: { CompCirculo }
+};
+</script>

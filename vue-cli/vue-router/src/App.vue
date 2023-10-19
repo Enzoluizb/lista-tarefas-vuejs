@@ -3,9 +3,9 @@
     <CompCabecalho />
     <div id="nav">
       <nav id="nav">
-        <router-link to="/">Home</router-link>
-        <router-link to="/about">About</router-link>
-        <router-link to="/usuario">User</router-link>
+        <router-link to="/" class="nav-link">Home</router-link>
+        <router-link to="/about" class="nav-link">About</router-link>
+        <router-link to="/usuario" class="nav-link">User</router-link>
       </nav>
     </div>
     <div class="content">
@@ -16,12 +16,12 @@
 </template>
 
 <script>
-import CompCabecalho from './components/templates/CompCabecalho.vue';
-import CompRodape from './components/templates/CompRodape.vue';
+import CompCabecalho from "./components/templates/CompCabecalho.vue";
+import CompRodape from "./components/templates/CompRodape.vue";
 
 export default {
-  components: { CompCabecalho, CompRodape}
-}
+  components: { CompCabecalho, CompRodape },
+};
 </script>
 
 <style>
