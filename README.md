@@ -1,4 +1,5 @@
-Lista de Tarefas Vue.js
+## Lista de Tarefas Vue.js
+
 Este repositório contém o código-fonte de um curso prático de Vue.js, focado na construção de uma aplicação de lista de tarefas. O curso visa fornecer uma introdução abrangente ao Vue.js, abordando desde conceitos básicos até tópicos mais avançados, com o objetivo de ajudar os desenvolvedores a construir aplicações web interativas e eficientes.
 
 Configuração do Ambiente
@@ -21,6 +22,7 @@ npm run serve
 ```
 
 Acesse a aplicação no seu navegador em http://localhost:8080.
+
 
 Estrutura do Projeto
 
