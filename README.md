@@ -2,7 +2,6 @@
 
 Este repositório contém o código-fonte de um curso prático de Vue.js, focado na construção de uma aplicação de lista de tarefas. O curso visa fornecer uma introdução abrangente ao Vue.js, abordando desde conceitos básicos até tópicos mais avançados, com o objetivo de ajudar os desenvolvedores a construir aplicações web interativas e eficientes.
 
-Configuração do Ambiente
 Antes de começar, certifique-se de ter o ambiente de desenvolvimento configurado corretamente. Siga as instruções abaixo para configurar o ambiente:
 
 Clone o Repositório:
